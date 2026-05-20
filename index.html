@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פרוטפוליו</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>ELLA LIVNAT EYAL</h1>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-content"></div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="projects-grid">
+                <div class="video-wrapper">
+                    <div class="project-hover-wrap">
+                        <video>
+                            <source src="7 אלה.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="project-overlay">
+                            <p><span class="overlay-title">"The swimmer"</span><br>A grid animation of a woman swimming, created in After Effects for a motion course at Bezalel Academy.</p>
+                        </div>
+                    </div>
+                    <button class="video-play-btn" onclick="toggleVideo(this)">&#9654; Play</button>
+                </div>
+                <div class="project-hover-wrap project-image-full">
+                    <img src="carpetprint.jpeg" alt="Carpetprint">
+                    <div class="project-overlay">
+                        <p><span class="overlay-title">"Persian carpet"</span><br>A screen print of a Persian carpet, created for a silkscreen course at Bezalel Academy.</p>
+                    </div>
+                </div>
+                <div class="project-side-by-side">
+                    <div class="project-hover-wrap project-image-side project-image-morning">
+                        <img src="morning.jpeg" alt="Morning">
+                        <div class="project-overlay">
+                            <p><span class="overlay-title">"Laundry room - 10:02"</span><br>A colored pencil drawing of my laundry room, showing changing light throughout the day. Created for an illustration course at Bezalel Academy.</p>
+                        </div>
+                    </div>
+                    <div class="project-hover-wrap project-image-side">
+                        <img src="evening.jpeg" alt="Evening">
+                        <div class="project-overlay">
+                            <p><span class="overlay-title">"Laundry room - 16:56"</span><br>A colored pencil drawing of my laundry room, showing changing light throughout the day. Created for an illustration course at Bezalel Academy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-wrapper">
+                    <div class="project-hover-wrap">
+                        <video>
+                            <source src="פרופורציה.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="project-overlay">
+                            <p><span class="overlay-title">"Proportion"</span><br>A kinetic typography piece animating the word 'proportion' and its meaning. Created in After Effects for a motion design course at Bezalel Academy.</p>
+                        </div>
+                    </div>
+                    <button class="video-play-btn" onclick="toggleVideo(this)">&#9654; Play</button>
+                </div>
+                <div class="project-three-images">
+                    <div class="project-hover-wrap project-image-three">
+                        <img src="face.jpeg" alt="Face">
+                        <div class="project-overlay">
+                            <p><span class="overlay-title">"Changes - face"</span><br>Acrylic stencil print of natural body and cosmetic changes. Created for illustration course in Bezalel Academy.</p>
+                        </div>
+                    </div>
+                    <div class="project-hover-wrap project-image-three">
+                        <img src="breast.jpeg" alt="Breast">
+                        <div class="project-overlay">
+                            <p><span class="overlay-title">"Changes - breast"</span><br>Acrylic stencil print of natural body and cosmetic changes. Created for illustration course in Bezalel Academy.</p>
+                        </div>
+                    </div>
+                    <div class="project-hover-wrap project-image-three">
+                        <img src="hair.jpeg" alt="Hair">
+                        <div class="project-overlay">
+                            <p><span class="overlay-title">"Changes - hair"</span><br>Acrylic stencil print of natural body and cosmetic changes. Created for illustration course in Bezalel Academy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-icons">
+            <a href="mailto:livnateyal17@gmail.com" class="icon-link">
+                <img src="mail icon.png" alt="Email">
+            </a>
+            <a href="https://www.instagram.com/ellartss_?igsh=YTI3Mmw4dDh3ZGZs&utm_source=qr" target="_blank" class="icon-link">
+                <img src="instagram icon.png" alt="Instagram">
+            </a>
+        </div>
+        <p class="footer-copyright">© 2026 Ella Livnat Eyal</p>
+    </footer>
+
+    <script>
+        // Remove hash from URL and scroll to top
+        if (window.location.hash) {
+            window.location.hash = '';
+        }
+        
+        // Force scroll to top immediately
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+
+        window.addEventListener('load', () => {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        });
+
+        function toggleVideo(btn) {
+            const wrap = btn.previousElementSibling;
+            const video = wrap.querySelector('video');
+            if (video.paused) {
+                video.play();
+                btn.innerHTML = '&#9646;&#9646; Pause';
+                wrap.classList.add('playing');
+            } else {
+                video.pause();
+                btn.innerHTML = '&#9654; Play';
+                wrap.classList.remove('playing');
+            }
+            video.addEventListener('ended', () => {
+                btn.innerHTML = '&#9654; Play';
+                wrap.classList.remove('playing');
+            }, { once: true });
+        }
+
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.sidebar a').forEach(link => {
+            link.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Ella Livnat Eyal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>ELLA LIVNAT EYAL</h1>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="about-page">
+        <section class="about-container">
+            <img src="menew.png" alt="Ella Livnat Eyal" class="about-illustration">
+            <p class="about-text">Hi, I'm Ella, first year Visual Communication student at Bezalel Academy of Arts and Design, currently based in Jerusalem.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-icons">
+            <a href="mailto:livnateyal17@gmail.com" class="icon-link">
+                <img src="mail icon.png" alt="Email">
+            </a>
+            <a href="https://www.instagram.com/ellartss_?igsh=YTI3Mmw4dDh3ZGZs&utm_source=qr" target="_blank" class="icon-link">
+                <img src="instagram icon.png" alt="Instagram">
+            </a>
+        </div>
+        <p class="footer-copyright">© 2026 Ella Livnat Eyal</p>
+    </footer>
+
+    <script>
+        window.scrollTo(0, 0);
+
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.sidebar a').forEach(link => {
+            link.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

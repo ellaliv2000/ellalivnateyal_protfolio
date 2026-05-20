@@ -1,0 +1,48 @@
+.about-page {
+    background-color: #ffcdeb;
+    min-height: calc(100vh - 278px);
+    display: flex;
+    align-items: center;
+    padding: 3rem 2rem;
+}
+
+.about-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    direction: ltr;
+}
+
+.about-illustration {
+    width: 260px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.about-text {
+    margin-top: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.8rem;
+    color: #eb5713;
+    line-height: 1.6;
+    font-weight: 300;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .about-illustration {
+        width: 220px;
+    }
+
+    .about-text {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+}
